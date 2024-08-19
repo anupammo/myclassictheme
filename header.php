@@ -17,4 +17,5 @@
         ) );
         ?>
     </nav>
+    <button class="menu-toggle">Menu</button>
 </header>
