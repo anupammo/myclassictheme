@@ -17,8 +17,8 @@ function myclassictheme_register_my_menus()
 {
     register_nav_menus(
         array(
-            'primary'   => __( 'Primary Menu', 'myclassictheme' ),
-            'mobile'    => __( 'Mobile Menu', 'myclassictheme' )
+            'primary'   => __('Primary Menu', 'myclassictheme'),
+            'mobile'    => __('Mobile Menu', 'myclassictheme')
         )
     );
 }
@@ -45,11 +45,12 @@ add_filter('nav_menu_link_attributes', 'myclassictheme_nav_menu_link_attributes'
 function myclassictheme_custom_logo_setup()
 {
     $defaults = array(
-        'height'      => 100,
-        'width'       => 400,
-        'flex-height' => true,
-        'flex-width'  => true,
-        'header-text' => array('site-title', 'site-description'),
+        'height'               => 100,
+        'width'                => 400,
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => array('site-title', 'site-description'),
+        'unlink-homepage-logo' => true,
     );
     add_theme_support('custom-logo', $defaults);
 }

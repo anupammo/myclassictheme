@@ -15,17 +15,15 @@
         <nav id="site-navigation" class="main-navigation navbar navbar-expand-md bg-body-tertiary" role="navigation">
             <div class="container">
                 <?php
-                if (function_exists('the_custom_logo')) {
-                    $custom_logo_id = get_theme_mod('custom_logo');
-                    $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+                $custom_logo_id = get_theme_mod('custom_logo');
+                $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
-                    if (has_custom_logo()) {
-                        echo '<a href="' . esc_url(home_url('/')) . '" class="navbar-brand">';
-                        echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" title="' . get_bloginfo('name') . '" class="rounded-circle logo48x48">';
-                        echo '</a>';
-                    } else {
-                        echo '<a href="' . esc_url(home_url('/')) . '" class="navbar-brand">Navbar</a>';
-                    }
+                if (has_custom_logo()) {
+                    // echo '<a href="' . esc_url(home_url('/')) . '" class="navbar-brand">';
+                    echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" title="' . get_bloginfo('name') . '" class="rounded-circle logo48x48">';
+                    // echo '</a>';
+                } else {
+                    echo '<a href="' . esc_url(home_url('/')) . '" class="navbar-brand">Brand</a>';
                 }
                 ?>
                 <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
