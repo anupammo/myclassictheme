@@ -7,6 +7,8 @@ add_action('wp_enqueue_scripts', 'myclassictheme_enqueue_styles');
 
 function myclassictheme_custom_scripts()
 {
+    // wp_register_script( 'bootstrapjs', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' );
+    // wp_enqueue_script( 'bootstrapjs' );
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/custom.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'myclassictheme_custom_scripts');
@@ -15,8 +17,8 @@ function myclassictheme_register_my_menus()
 {
     register_nav_menus(
         array(
-            'primary' => __('Primary Menu'),
-            'mobile' => __('Mobile Menu')
+            'primary'   => __( 'Primary Menu', 'myclassictheme' ),
+            'mobile'    => __( 'Mobile Menu', 'myclassictheme' )
         )
     );
 }
@@ -43,10 +45,10 @@ add_filter('nav_menu_link_attributes', 'myclassictheme_nav_menu_link_attributes'
 function myclassictheme_custom_logo_setup()
 {
     $defaults = array(
-        // 'height'      => 100,
-        // 'width'       => 400,
-        // 'flex-height' => true,
-        // 'flex-width'  => true,
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
         'header-text' => array('site-title', 'site-description'),
     );
     add_theme_support('custom-logo', $defaults);
