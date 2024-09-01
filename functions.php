@@ -64,3 +64,17 @@ function myclassictheme_custom_logo_setup()
     add_theme_support('custom-logo', $defaults);
 }
 add_action('after_setup_theme', 'myclassictheme_custom_logo_setup');
+// 404 page template with custom search
+function my_custom_search_form($form)
+{
+    $form = '
+    <form role="search" method="get" class="d-flex search-form custom-class" action="' . esc_url(home_url('/')) . '">
+        <label>
+            <span class="screen-reader-text">' . _x('Search for:', 'label') . '</span>
+        </label>
+        <input type="search" class="search-field custom-input-class form-control me-2" placeholder="' . esc_attr_x('Search …', 'placeholder') . '" value="' . get_search_query() . '" name="s" />
+        <input type="submit" class="search-submit custom-submit-class btn btn-outline-success" value="' . esc_attr_x('Search', 'submit button') . '" />
+    </form>';
+    return $form;
+}
+add_filter('get_search_form', 'my_custom_search_form');
