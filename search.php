@@ -1,19 +1,27 @@
 <?php get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-        <header class="archive-header">
-            <h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'theme-text-domain' ), get_search_query() ); ?></h1>
-        </header>
-        <?php if ( have_posts() ) : ?>
-            <?php while ( have_posts() ) : the_post(); ?>
-                <div class="post">
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <div class="entry"><?php the_excerpt(); ?></div>
+        <section class="archive-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="archive-title display-5 my-3"><?php printf(__('Search Results for: %s', 'theme-text-domain'), get_search_query()); ?></h1>
+                        <?php if (have_posts()) : ?>
+                            <ul class="nav flex-column my-4">
+                                <?php while (have_posts()) : the_post(); ?>
+                                    <li class="post nav-item lead fs-6">
+                                        <a class="nav-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <div class="entry"><?php the_excerpt(); ?></div>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php else : ?>
+                            <p class="lead my-3">No posts found.</p>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            <?php endwhile; ?>
-        <?php else : ?>
-            <p>No posts found.</p>
-        <?php endif; ?>
+            </div>
+        </section>
     </main>
 </div>
 <?php get_sidebar(); ?>
