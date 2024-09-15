@@ -19,3 +19,11 @@ Text Domain: myclassictheme
     width: 48px;
     height: 48px;
 }
+
+.navbar-nav li {
+    padding: 8px;
+}
+
+.navbar-nav li a {
+    text-decoration: none;
+}

@@ -28,30 +28,32 @@
                 <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <?php
-                wp_nav_menu(
-                    array(
-                        'container_class'      => 'collapse navbar-collapse',
-                        'menu_class'           => 'navbar-nav ms-auto mb-2 mb-lg-0',
-                        'menu'                 => 'main-menu',
-                        'container'            => 'div',
-                        'container_id'         => 'navbarSupportedContent',
-                        'container_aria_label' => '',
-                        'menu_id'              => '',
-                        'echo'                 => true,
-                        'fallback_cb'          => 'wp_page_menu',
-                        'before'               => '',
-                        'after'                => '',
-                        'link_before'          => '',
-                        'link_after'           => '',
-                        'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'item_spacing'         => 'preserve',
-                        'depth'                => 0,
-                        'walker'               => '',
-                        'theme_location'       => 'primary'
-                    )
-                );
-                ?>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'container'            => 'ul',
+                            'container_class'      => '',
+                            'container_id'         => '',
+                            'container_aria_label' => '',
+                            'menu'                 => '',
+                            'menu_class'           => 'navbar-nav ms-auto mb-2 mb-lg-0',
+                            'menu_id'              => '',
+                            'echo'                 => true,
+                            'fallback_cb'          => 'wp_page_menu',
+                            'before'               => '',
+                            'after'                => '',
+                            'link_before'          => '',
+                            'link_after'           => '',
+                            'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'item_spacing'         => 'preserve',
+                            'depth'                => 0,
+                            'walker'               => '',
+                            'theme_location'       => ''
+                        )
+                    );
+                    ?>
+                </div>
         </nav>
         <!-- <div class="container">
             <div class="row">
