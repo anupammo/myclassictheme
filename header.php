@@ -48,7 +48,7 @@
                             'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                             'item_spacing'         => 'preserve',
                             'depth'                => 0,
-                            'walker'               => '',
+                            'walker'               => new Custom_Walker_Nav_Menu(),
                             'theme_location'       => ''
                         )
                     );

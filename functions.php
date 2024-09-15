@@ -78,3 +78,51 @@ function my_custom_search_form($form)
     return $form;
 }
 add_filter('get_search_form', 'my_custom_search_form');
+
+class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
+{
+    function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+    {
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
+        if (in_array('menu-item-has-children', $classes)) {
+            $classes[] = 'has-children dropdown';
+
+
+            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+            $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+            $output .= '<li' . $class_names . '>';
+
+            $attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) . '"' : '';
+            $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target) . '"' : '';
+            $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) . '"' : '';
+            $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
+
+            $item_output = $args->before;
+            $item_output .= '<a' . $attributes . '><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a><ul class="dropdown-menu"><li>';
+            $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+            $item_output .= '</a></li></ul>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+        } else {
+            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+            $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+            $output .= '<li' . $class_names . '>';
+
+            $attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) . '"' : '';
+            $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target) . '"' : '';
+            $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) . '"' : '';
+            $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
+
+            $item_output = $args->before;
+            $item_output .= '<a' . $attributes . '>';
+            $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+
+            $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+        }
+    }
+}

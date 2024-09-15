@@ -4,6 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <!-- page template -->
+                    <p class="lead">Single Page</p>
+                    <!-- page template -->                    
                     <?php
                     // Start the loop.
                     while (have_posts()) : the_post();

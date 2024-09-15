@@ -4,6 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <p class="lead">Page</p>
                     <?php
                     // Start the loop.
                     while (have_posts()) : the_post();

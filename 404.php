@@ -16,6 +16,9 @@ get_header(); ?>
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+                        <!-- page template -->
+                        <p class="lead">404 Page</p>
+                        <!-- page template -->
                         <h1 class="page-title lead fs-2">
                             <span class="d-block text-danger display-2">404</span>
                             <?php esc_html_e('Oops! That page can’t be found.', 'your-theme-textdomain'); ?>

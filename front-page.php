@@ -4,6 +4,9 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12">
+                    <!-- page template -->
+                    <p class="lead">Front Page</p>
+                    <!-- page template -->
                     <?php
                     if (have_posts()) :
                         while (have_posts()) : the_post();
