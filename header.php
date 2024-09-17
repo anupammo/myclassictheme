@@ -40,7 +40,7 @@
                             'menu_class'           => 'navbar-nav ms-auto mb-2 mb-lg-0',
                             'menu_id'              => '',
                             'echo'                 => true,
-                            'fallback_cb'          => 'wp_page_menu',
+                            'fallback_cb'          => '',
                             'before'               => '',
                             'after'                => '',
                             'link_before'          => '',
@@ -48,7 +48,8 @@
                             'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                             'item_spacing'         => 'preserve',
                             'depth'                => 0,
-                            'walker'               => new Custom_Walker_Nav_Menu(),
+                            'walker'               => new Custom_Walker_Nav_Menu_Depth_3(),
+                            // 'walker'               => '',
                             'theme_location'       => ''
                         )
                     );
