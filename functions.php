@@ -129,7 +129,7 @@ class Custom_Walker_Nav_Menu extends Walker_Nav_Menu
 
         // Check if the item has children
         if (in_array('menu-item-has-children', $classes)) {
-            $submenu_elmnt = '<a class="dropdown-toggle bg-secondary text-white d-inline float-end rounded px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>';
+            $submenu_elmnt = '<a class="dropdown-toggle bg-light text-dark d-inline float-end rounded px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>';
         } else {
             $submenu_elmnt = '';
         }
