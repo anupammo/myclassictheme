@@ -10,8 +10,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <header>
-        <nav id="site-navigation" class="main-navigation navbar navbar-expand-md bg-body-tertiary" role="navigation">
+    <header class="container-fluid">
+        <nav id="site-navigation" class="main-navigation navbar navbar-expand-md" role="navigation">
             <div class="container">
                 <?php
                 $custom_logo_id = get_theme_mod('custom_logo');
@@ -32,7 +32,7 @@
                     <?php
                     wp_nav_menu(
                         array(
-                            'container'            => 'ul',
+                            'container'            => '',
                             'container_class'      => '',
                             'container_id'         => '',
                             'container_aria_label' => '',
@@ -48,7 +48,7 @@
                             'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
                             'item_spacing'         => 'preserve',
                             'depth'                => 0,
-                            'walker'               => new Custom_Walker_Nav_Menu_Depth_3(),
+                            'walker'               => new Custom_Walker_Nav_Menu(),
                             // 'walker'               => '',
                             'theme_location'       => ''
                         )
