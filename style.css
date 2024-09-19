@@ -24,6 +24,10 @@ Text Domain: myclassictheme
     padding: 8px;
 }
 
-.navbar-nav li a {
+/* .navbar-nav li a {
     text-decoration: none;
+} */
+
+.dropdown-menu[data-bs-popper] {
+    left: auto !important;
 }
